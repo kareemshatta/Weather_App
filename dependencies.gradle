@@ -2,11 +2,13 @@ ext {
     rxJavaVersion = '2.2.10'
     rxKotlinVersion = '2.3.0'
     rxAndroidVersion = '2.1.1'
+    rxAnimationVersion = '1.0.0'
     koinVersion = '2.0.1'
     materialVersion = '1.1.0'
     retrofitVersion = '2.1.0'
     glide = '4.11.0'
     roomVersion = 'roomVersion'
+    permissionVersion = '6.0.0'
 
     androidBuildToolsVersion = "29.0.3"
     androidMinSdkVersion = 21
@@ -20,12 +22,14 @@ ext {
             recyclerView    : "androidx.recyclerview:recyclerview:${materialVersion}",
             appCompact      : "androidx.appcompat:appcompat:${materialVersion}",
             material        : "com.google.android.material:material:${materialVersion}",
+            permission        : "com.karumi:dexter:${permissionVersion}",
             constraintlayout: "androidx.constraintlayout:constraintlayout:${materialVersion}"
 
     ]
     rxDependencies = [
             rxJava   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxKotlin : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAnimation: "com.mikhaellopez:rxanimation:${rxAnimationVersion}",
             rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
     ]
     koinDependencies = [

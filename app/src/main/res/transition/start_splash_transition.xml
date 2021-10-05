@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/fast_out_slow_in">
+
+
+    <fade android:fadingMode="fade_out" android:duration="0">
+        <targets>
+            <target android:targetId="@+id/circleCloudImageView" />
+            <target android:targetId="@+id/buildingImageView" />
+            <target android:targetId="@+id/centerCloudImageView" />
+            <target android:targetId="@+id/imageViewBottomDrawableShadow" />
+        </targets>
+    </fade>
+
+    <pathMotion >
+
+    </pathMotion>
+    <transitionSet android:duration="0">
+        <targets>
+            <target android:targetId="@+id/circleCloudImageView" />
+            <target android:targetId="@+id/buildingImageView" />
+            <target android:targetId="@+id/centerCloudImageView" />
+            <target android:targetId="@+id/imageViewBottomDrawableShadow" />
+        </targets>
+    </transitionSet>
+
+    <slide
+        android:duration="250"
+        android:slideEdge="bottom"
+        android:startDelay="50">
+        <targets>
+            <target android:targetId="@+id/sessionsLayout" />
+            <target android:targetId="@+id/unAuthLayout" />
+            <target android:targetId="@+id/sessionsLoader" />
+
+        </targets>
+    </slide>
+
+</transitionSet>

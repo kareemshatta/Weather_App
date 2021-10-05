@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Weather_App</string>
     <string name="network_error">Network Error</string>
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_message">Now, you can get the most accurate weather results of any place.</string>
+    <string name="continue_word">Continue</string>
 </resources>

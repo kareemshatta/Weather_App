@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/drawable/bg_splash_gradient.xml" value="0.2169230769230769" />
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/drawable/bg_white_corner_8dp.xml" value="0.2169230769230769" />
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/drawable/ic_right_cloud.xml" value="0.2169230769230769" />
         <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/layout/activity_main.xml" value="0.1802536231884058" />
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
+        <entry key="..\:/android studio/android studio projects/kotlin apps/Weather_App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1125" />
       </map>
     </option>
   </component>

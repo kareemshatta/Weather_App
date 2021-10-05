@@ -1,10 +1,11 @@
-package com.example.weather_app.ui
+package com.example.weather_app.ui.main
 
 import android.os.Bundle
 import android.view.View
 import com.example.weather_app.R
 import com.example.weather_app.base.BaseActivity
 import com.example.weather_app.databinding.ActivityMainBinding
+import com.example.weather_app.utils.AnimationUtils.startSplashAnimation
 import org.koin.android.ext.android.inject
 
 class MainActivity : BaseActivity<MainActivityContract.Presenter>(),
@@ -17,6 +18,11 @@ class MainActivity : BaseActivity<MainActivityContract.Presenter>(),
     override fun initViews(savedInstanceState: Bundle?, view: View) {
         mainActivityBinding = ActivityMainBinding.bind(view)
         presenter.attachView(this)
+
+        mainActivityBinding?.startSplashAnimation(compositeDisposable)
+        mainActivityBinding?.continueButton?.setOnClickListener {
+            //TODO go to home activity
+        }
     }
 
 }
