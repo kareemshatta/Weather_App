@@ -95,7 +95,9 @@ object AnimationUtils {
                     continueButton.translationY(0F, 1000),
                     continueButton.fadeIn(500)
                 )
-            ).subscribe()
+            ).doAfterTerminate {
+
+            }.subscribe()
         )
     }
 }

@@ -4,4 +4,5 @@
     <string name="welcome">Welcome!</string>
     <string name="welcome_message">Now, you can get the most accurate weather results of any place.</string>
     <string name="continue_word">Continue</string>
+    <string name="permission_denied">Premission denied</string>
 </resources>
