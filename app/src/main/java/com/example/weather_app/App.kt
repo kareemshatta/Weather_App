@@ -16,8 +16,8 @@ class App : Application() {
             loadKoinModules(
                 mutableListOf(
                     dataModule,
-                    appModule,
-                    domainModule
+                    domainModule,
+                    appModule
                 )
             )
         }

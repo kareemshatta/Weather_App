@@ -12,14 +12,13 @@ ext {
 
     androidBuildToolsVersion = "29.0.3"
     androidMinSdkVersion = 21
-    androidTargetSdkVersion = 30
-    androidCompileSdkVersion = 30
+    androidTargetSdkVersion = 31
+    androidCompileSdkVersion = 31
     androidVersionCode = 1
     androidVersionName = "1.0"
-    kotlinVersion = '1.4.0'
+    kotlinVersion = '1.5.31'
 
     ankoVersion = "0.10.8"
-    airLocationVersion = "2.5.2"
 
     baseDependencies = [
             recyclerView    : "androidx.recyclerview:recyclerview:${materialVersion}",
@@ -27,9 +26,7 @@ ext {
             material        : "com.google.android.material:material:${materialVersion}",
             permission      : "com.karumi:dexter:${permissionVersion}",
             anko            : "org.jetbrains.anko:anko:${ankoVersion}",
-            constraintlayout: "androidx.constraintlayout:constraintlayout:${materialVersion}",
-            airLocation     : "com.github.mumayank:AirLocation:${airLocationVersion}"
-
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${materialVersion}"
     ]
     rxDependencies = [
             rxJava   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
@@ -50,7 +47,8 @@ ext {
             converter        : "com.squareup.retrofit2:converter-scalars:2.1.0",
     ]
     appDependencies = [
-            glide       : "com.github.bumptech.glide:glide:${glide}",
-            txtDrawable : 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+            glide             : "com.github.bumptech.glide:glide:${glide}",
+            txtDrawable       : 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1',
+            materialSearchView: 'com.miguelcatalan:materialsearchview:1.4.0'
     ]
 }

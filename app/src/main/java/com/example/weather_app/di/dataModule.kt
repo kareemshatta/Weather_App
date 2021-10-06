@@ -1,6 +1,7 @@
 package com.example.weather_app.di
 
 import androidx.room.Room
+import com.example.weather_app.Constants.APP_ID
 import com.example.weather_app.data.db.DbApiHelper
 import com.example.weather_app.data.db.DbApiHelperImpl
 import com.example.weather_app.data.db.data_base.AppDatabase
@@ -29,7 +30,7 @@ val dataModule = module {
             .writeTimeout(30, TimeUnit.SECONDS)
         client.addInterceptor { chain ->
             val request = chain.request().newBuilder()
-            request.addHeader("app-id", "60072536fa7334423a15ae43").build()
+            request.addHeader("app_id", APP_ID).build()
             chain.proceed(request.build())
         }.build()
 
@@ -48,14 +49,14 @@ val dataModule = module {
         get<Retrofit>(named("retrofitClient")).create(RetrofitApiService::class.java)
     }
 
-
     single {
         Room.databaseBuilder(
             androidContext(),
             AppDatabase::class.java,
-            "mvp_example.db"
-        ).build()
+            "weather_app_db"
+        ).allowMainThreadQueries().build()
     }
+
     single {
         get<AppDatabase>().repoDao
     }
