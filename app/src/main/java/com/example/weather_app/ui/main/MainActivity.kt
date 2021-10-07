@@ -1,21 +1,22 @@
 package com.example.weather_app.ui.main
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.core.app.ActivityCompat
 import com.example.weather_app.R
 import com.example.weather_app.base.BaseActivity
 import com.example.weather_app.databinding.ActivityMainBinding
-import com.example.weather_app.models.UserLocation
+import com.example.weather_app.domain.inputs.GetCityDetailsInput
+import com.example.weather_app.models.CityDetails
 import com.example.weather_app.ui.home.HomeActivity
-import com.example.weather_app.utils.*
 import com.example.weather_app.utils.AnimationUtils.startSplashAnimation
-import com.google.android.gms.location.*
-import org.koin.android.ext.android.inject
+import com.example.weather_app.utils.LocationException
+import com.example.weather_app.utils.LocationFetcher
+import com.example.weather_app.utils.LocationResponseCallback
+import com.example.weather_app.utils.LocationResultModel
 import org.jetbrains.anko.intentFor
+import org.koin.android.ext.android.inject
 
 class MainActivity : BaseActivity<MainActivityContract.Presenter>(),
     MainActivityContract.View {
@@ -41,22 +42,26 @@ class MainActivity : BaseActivity<MainActivityContract.Presenter>(),
         locationFetcher = LocationFetcher(this)
         locationFetcher.getLastLocation(object : LocationResponseCallback {
             override fun onSuccess(locationResultModel: LocationResultModel) {
-                val userLocation = UserLocation(
-                    latitude = locationResultModel.lat.toFloat(),
-                    longitude = locationResultModel.long.toFloat()
+                val cityDetails = CityDetails(
+                    latitude = locationResultModel.lat,
+                    longitude = locationResultModel.long
                 )
-                presenter.saveUserLocation(userLocation)
-                startActivity(intentFor<HomeActivity>())
-                finish()
+                presenter.getCityData(
+                    GetCityDetailsInput(
+                        lat = cityDetails.latitude,
+                        lon = cityDetails.longitude
+                    )
+                )
             }
 
             override fun onFailed(locationException: LocationException) {
-                presenter.saveUserLocation(UserLocation())
+                presenter.saveCityDetails(CityDetails())
                 startActivity(intentFor<HomeActivity>())
                 finish()
             }
         })
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         locationFetcher.onActivityResult(
             requestCode,
@@ -67,4 +72,18 @@ class MainActivity : BaseActivity<MainActivityContract.Presenter>(),
     }
 
     override fun fullScreen() = true
+
+    override fun onGetCityDataSuccess(cityDetails: CityDetails) {
+        presenter.saveCityDetails(cityDetails)
+        startActivity(intentFor<HomeActivity>())
+        finish()
+    }
+
+    override fun onGetCityDataFailed(message: String) {
+        presenter.saveCityDetails(CityDetails())
+        showMessage(message)
+        startActivity(intentFor<HomeActivity>())
+        finish()
+
+    }
 }
