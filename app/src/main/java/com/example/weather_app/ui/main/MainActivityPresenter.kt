@@ -13,10 +13,6 @@ class MainActivityPresenter(private val appInteractor: AppInteractor) :
     BasePresenter<MainActivityContract.View>(),
     MainActivityContract.Presenter {
 
-    override fun getLocalCityDetails(latitude: Double, longitude: Double) {
-        appInteractor.getLocalCityDetails()
-    }
-
     override fun saveCityDetails(cityDetails: CityDetails) {
         appInteractor.saveCityDetails(cityDetails)
     }

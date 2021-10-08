@@ -8,9 +8,7 @@ import com.example.weather_app.models.CityDetails
 interface MainActivityContract {
 
     interface Presenter : MvpPresenter<View> {
-        fun getLocalCityDetails(latitude: Double, longitude: Double)
         fun saveCityDetails(cityDetails: CityDetails)
-
         fun getCityData(getCityDetailsInput: GetCityDetailsInput)
     }
 

@@ -9,4 +9,10 @@
     <string name="cancel">Cancel</string>
     <string name="settings">Settings</string>
     <string name="city_name">City, Country</string>
+    <string name="today">Today</string>
+    <string name="humidity">Humidity:</string>
+    <string name="wind">Wind:</string>
+    <string name="next_days">Next Days</string>
+    <string name="error_saving_weather_details">Error when saving weather details</string>
+    <string name="recent">Recent</string>
 </resources>
